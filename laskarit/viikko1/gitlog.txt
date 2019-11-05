@@ -1,0 +1,140 @@
+Date:   Tue Nov 5 18:54:28 2019 +0200
+
+    muutokset tiedostoihin
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9c52e8eb88d097debaa55a0ada77cf7e063472d6
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:51:33 2019 +0200
+
+    Luotu kansio
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 96e2f34e411bc7fed4e72e6cda95d07a5e130ff1
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:48:23 2019 +0200
+
+    taas mennään
+
+ eka.txt    | 2 +-
+ kolmas.txt | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 666117ee00f3d6df4d4ac1191bbb2814be2Date:   Tue Nov 5 18:54:28 2019 +0200
+
+    muutokset tiedostoihin
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9c52e8eb88d097debaa55a0ada77cf7e063472d6
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:51:33 2019 +0200
+
+    Luotu kansio
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 96e2f34e411bc7fed4e72e6cda95d07a5e130ff1
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:48:23 2019 +0200
+
+    taas mennään
+
+ eka.txt    | 2 +-
+ kolmas.txt | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 666117ee00f3d6df4d4ac1191bbb2814be267ef6
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:46:48 2019 +0200
+
+    uudelleen nimentä
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 1e9ac290a4fb4e4b1a0d59e8104944eb425be0e2
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:45:49 2019 +0200
+
+    poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 161ff52ee2b8eb01a9b99f177286126c6b6e4933
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:43:09 2019 +0200
+
+    Tekstit kasaan
+
+ tiedosto.txt | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+commit 3eea81d844c79826c5e7dde5395c5652983720f2
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:41:30 2019 +0200
+
+    tiedosto muutokset
+
+ tiedosto.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit e094f48bc13e61a424f6d9a288f04847c0e00fff
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:38:36 2019 +0200
+
+    Tehty stuff
+
+ stuff/turhake.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit dd4b6e4396c0e2b742455567e6286a3790d2d532
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:37:51 2019 +0200
+
+    muutoksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 9026d5a2f1cfca2e026fd6ec49d4b35522d0fc89
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:36:29 2019 +0200
+
+    Lisättiin kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit be105ba2ae734df770733db24eb7c53f320298d7
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:35:28 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 671aa573084b64cd996cd4dd54c097a8481f4454
+Author: Mikxdi <mikko.lehtinen1996@gmail.com>
+Date:   Tue Nov 5 18:33:15 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
