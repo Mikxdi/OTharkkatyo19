@@ -11,3 +11,6 @@ Tämä on **bold** ja tämä on *italic*
 
 
 [Hakemisto](https://github.com/Mikxdi/OTharkkatyo19/blob/master/laskarit/viikko1/komentorivi.txt)
+
+
+[Tuntikirjanpito](https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Tuntikirjanpito.md)
