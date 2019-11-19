@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package greedystudent.domain;
-
+import javafx.scene.Group;
 /**
  *
  * @author lehtmikk
  */
-public class Level {
+public class Level extends Group{
     
 }
