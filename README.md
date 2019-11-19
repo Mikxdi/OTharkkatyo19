@@ -1,10 +1,10 @@
 # GreedyStudent
 
-###Kuvaus
+### Kuvaus
 
 Helsingin yliopiston ohjelmistotekniikka kurssia varten luodun sovelluksen repositio
 
-###Testaus
+### Testaus
 
 Testaus suoritetaan komennolla 
 
@@ -17,6 +17,7 @@ Jacoco raportti saadaan ajamalla terminaalissa komento
 
 ```
 mvn jacoco:report
+```
 
 ### Ohjelman suorittaminen
 

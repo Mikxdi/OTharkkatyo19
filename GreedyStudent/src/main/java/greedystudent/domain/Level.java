@@ -55,7 +55,7 @@ public class Level extends Group{
             }
         }
     }
-    List <Platform> getPlatformList(){
+    public List <Platform> getPlatformList(){
         return platList;
     }
     double getHeigth(){
