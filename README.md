@@ -24,7 +24,7 @@ mvn jacoco:report
 Ohjelman suorittaminen tapahtuu syöttämällä terminaaliin komennon
 
 ```
-mvn compile exec:java -Dexec.mainClass=greedystudent.ui.GreedystudentUI 
+mvn compile exec:java -Dexec.mainClass=greedystudent.ui.GreedystudentUi 
 ```
 
 ####  Linkki tuntikirjanpitoon
