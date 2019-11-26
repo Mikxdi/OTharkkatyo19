@@ -26,6 +26,7 @@ Pelissä on neljä eri näkymää. Se aukeaa päävalikkoon, joka sisältää va
 
 ### Pelinäkymä
 
+* Peli piirtää kentän ja luo siihen kuuluvat osiot sekä pelihahmon Done
 * Pelaaja ohjaa peli hahmoa awd-näppäimillä
 * Peli loppuu pelaajan kerätessä kaikki kolikot tai pelaajan kuollessa
 * Palaa automaattisesti kenttävalikkoon
