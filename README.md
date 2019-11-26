@@ -19,6 +19,17 @@ Jacoco raportti saadaan ajamalla terminaalissa komento
 mvn jacoco:report
 ```
 
+Ohjelman checkstyle raportin saa komennolla
+
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
+Kyseisen raportin saa luettua esimerkiksi komennolla
+
+```
+chromium-browser target/site/checkstyle.html
+```
+
 ### Ohjelman suorittaminen
 
 Ohjelman suorittaminen tapahtuu syöttämällä terminaaliin komennon

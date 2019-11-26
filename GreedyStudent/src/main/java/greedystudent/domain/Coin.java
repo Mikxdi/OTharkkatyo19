@@ -11,7 +11,7 @@ public class Coin extends ImageView {
     String coin = "images/coin.png";
     double size = 60;
     
-    public Coin(double xpos, double ypos){
+    public Coin(double xpos, double ypos) {
         Image image = new Image(getClass().getClassLoader().getResourceAsStream(coin));
         setX(xpos);
         setY(ypos);

@@ -13,7 +13,7 @@ import javafx.scene.shape.Rectangle;
  */
 public class Platform extends Rectangle {
     private Color platcolor = Color.BROWN;
-    public Platform (double x, double y, double width, double height){
+    public Platform(double x, double y, double width, double height) {
         super(x, y, width, height);
         setFill(platcolor);
     }
