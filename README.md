@@ -41,3 +41,5 @@ mvn compile exec:java -Dexec.mainClass=greedystudent.ui.GreedystudentUi
 ####  Linkki tuntikirjanpitoon
 [Tuntikirjanpito](https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Tuntikirjanpito.md)
 
+#### Linkki Arkkitehtuuri kuvaukseen
+[Arkkitehtuuri](https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Arkkitehtuuri.md)
