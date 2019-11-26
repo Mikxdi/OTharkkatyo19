@@ -15,6 +15,7 @@ import javafx.scene.input.KeyCode;
 import java.util.List;
 import java.util.ArrayList;
 import greedystudent.domain.Level;
+import greedystudent.domain.Character;
 
         
 /**
@@ -31,13 +32,16 @@ public class GreedystudentUi extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        GridPane e = new GridPane();
-        Button start = new Button("start");
-        e.add(start, 1, 1);
+        //GridPane e = new GridPane();
+        //Button start = new Button("start");
+        //e.add(start, 1, 1);
         sceneGroup = new Group();
         Scene alku = new Scene(sceneGroup, height, width);
         Level cLevel = new Level(height);
+        Character student = new Character(0, 0);
+        sceneGroup.setLayoutX(0);
         sceneGroup.getChildren().add(cLevel);
+        sceneGroup.getChildren().add(student);
         stage.setScene(alku);
         stage.setHeight(height);
         stage.setWidth(width);
