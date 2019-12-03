@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.ArrayList;
 import greedystudent.domain.Level;
 import greedystudent.domain.Character;
+import greedystudent.domain.GameLogic;
+import javafx.animation.AnimationTimer;
 
         
 /**
@@ -31,20 +33,55 @@ public class GreedystudentUi extends Application {
     }
     
     @Override
-    public void start(Stage stage) throws Exception {
-        //GridPane e = new GridPane();
-        //Button start = new Button("start");
-        //e.add(start, 1, 1);
-        sceneGroup = new Group();
-        Scene alku = new Scene(sceneGroup, height, width);
+    public void start(Stage mainstage) throws Exception {
+        GridPane er = new GridPane();
+        Button start = new Button("start");
+        start.setOnAction(e ->{
+            gameLoop(mainstage);
+        });
+        er.add(start, 0, 0);
+        /*sceneGroup = new Group();
+        Scene game = new Scene(sceneGroup,width, height);
         Level cLevel = new Level(height);
         Character student = new Character(0, 0);
         sceneGroup.setLayoutX(0);
         sceneGroup.getChildren().add(cLevel);
+        sceneGroup.getChildren().add(student);*/
+        Scene alku = new Scene(er, width, height);
+        mainstage.setScene(alku);
+        mainstage.show();
+    }
+    
+    public void gameLoop(Stage s){
+        sceneGroup = new Group();
+        Scene game = new Scene(sceneGroup,width, height);
+        Level cLevel = new Level(height);
+        Character student = new Character(0, 0);
+        GameLogic gamelog = new GameLogic(student, cLevel);
+        sceneGroup.setLayoutX(0);
+        sceneGroup.getChildren().add(cLevel);
         sceneGroup.getChildren().add(student);
-        stage.setScene(alku);
-        stage.setHeight(height);
-        stage.setWidth(width);
-        stage.show();
+        s.setScene(game);
+        new AnimationTimer(){
+            long lastpoint=0;
+            
+            
+            @Override
+            public void handle(long current){
+                if(current-lastpoint < 1000){
+                    return;
+                }
+                game.setOnKeyPressed(e ->{
+                    if(e.getCode() == KeyCode.D){
+                        student.moveRight();
+                    }
+                    if(e.getCode() == KeyCode.A){
+                        student.moveLeft();
+                    }
+                });
+                gamelog.update();
+                lastpoint = current;
+            }
+        }.start();
     }
 }
