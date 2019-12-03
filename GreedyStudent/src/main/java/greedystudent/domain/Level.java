@@ -4,13 +4,11 @@
  * and open the template in the editor.
  */
 package greedystudent.domain;
-import java.io.IOException;
 import javafx.scene.Group;
 import java.io.InputStream;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 
 /**
@@ -32,9 +30,7 @@ public class Level extends Group {
     public Level(double height) {
         String file = lvl;
         InputStream fileread = getClass().getClassLoader().getResourceAsStream(file);
-        System.out.println("onnistuu2");
         Scanner lvlinput = new Scanner(fileread);
-        System.out.println("onnistuu3");
         platList = new ArrayList<Platform>();
         coinList = new ArrayList<Coin>();
         levelHeight = height;

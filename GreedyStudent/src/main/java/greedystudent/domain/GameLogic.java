@@ -14,9 +14,9 @@ import javafx.geometry.Bounds;
  */
 public class GameLogic {
     public Level l;
-    public Character c;
+    public Student c;
     public boolean allcoins = false;
-    public GameLogic(Character c, Level l) {
+    public GameLogic(Student c, Level l) {
         this.l = l;
         this.c = c;
     }

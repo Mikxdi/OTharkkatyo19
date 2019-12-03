@@ -15,7 +15,7 @@ import javafx.scene.input.KeyCode;
 import java.util.List;
 import java.util.ArrayList;
 import greedystudent.domain.Level;
-import greedystudent.domain.Character;
+import greedystudent.domain.Student;
 import greedystudent.domain.GameLogic;
 import java.util.HashSet;
 import javafx.animation.AnimationTimer;
@@ -44,7 +44,7 @@ public class GreedystudentUi extends Application {
         sceneGroup = new Group();
         Scene game = new Scene(sceneGroup,width, height);
         Level cLevel = new Level(height);
-        Character student = new Character(0, 0);
+        Student student = new Student(0, 0);
         GameLogic gamelog = new GameLogic(student, cLevel);
         sceneGroup.setLayoutX(0);
         sceneGroup.getChildren().add(cLevel);

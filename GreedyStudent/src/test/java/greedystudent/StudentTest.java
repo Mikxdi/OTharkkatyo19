@@ -11,30 +11,30 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import greedystudent.domain.Character;
+import greedystudent.domain.Student;
 
 /**
  *
  * @author lehtmikk
  */
-public class CharacterTest {
+public class StudentTest {
     
-    Character c;
+    Student c;
     
     @Before
     public void setUp() {
-        Character c = new Character(2, 1);
+        Student c = new Student(0, 0);
     }
-    
-    /*@Test
-    public void moveRight(){
-        moveRight();
-        assertEquals(true, c.isMovingRight());
+    /*
+    @Test
+    public void moveRightTest(){
+        c.moveRight();
+        assertTrue(c.movingRight);
     }
     @Test
-    public void moveLeft(){
-        moveLeft();
-        assertEquals(true, c.isMovingLeft());
+    public void moveLeftTest(){
+        c.moveLeft();
+        assertTrue(c.movingLeft);
     }*/
 
 }

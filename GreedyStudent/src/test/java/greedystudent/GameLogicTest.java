@@ -5,35 +5,38 @@
  */
 package greedystudent;
 
+import greedystudent.domain.GameLogic;
+import greedystudent.domain.Level;
+import greedystudent.domain.Student;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import greedystudent.domain.Level;
+
 /**
  *
  * @author lehtmikk
  */
-public class LevelTest {
-    Level l;
+public class GameLogicTest {
     
+    Student c;
+    GameLogic g;
+    Level l;
     @Before
     public void setUp() {
-        this.l = new Level(720);
+        Student c = new Student(10, 10);
+        Level l = new Level(600);
+        GameLogic g = new GameLogic(c, l);
     }
     
-    @Test
-    public void platformListIsNotEmpty(){
-        assertTrue(l.getPlatformList()!=null);
-        
-    } 
-    @Test
-    public void coinListIsNotEmpty(){
-        assertTrue(l.getCoinList()!=null);
-        
-    } 
+    /*@Test
+    public void aliveStatusT (){
+        c.setY(20);
+        g.aliveStatus();
+        assertTrue(c.isAlive);
+    }*/
     
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

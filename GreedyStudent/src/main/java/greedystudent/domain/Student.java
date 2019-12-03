@@ -12,21 +12,21 @@ import javafx.scene.image.Image;
  *
  * @author lehtmikk
  */
-public class Character extends ImageView {
+public class Student extends ImageView {
     public double size = 100;
     public String character = "images/student.png";
     public double xSpeed = 300;
     public double jumpHeight = 30;
     public boolean canJump =  false;
     public double yAccelerate = 1.0001;
-    public boolean movingRight;
-    public boolean movingLeft;
+    public boolean movingRight = false;
+    public boolean movingLeft = false;
     public double yVelocity;
     public boolean onPlatform = false;
     public boolean isAlive = true;
     
     
-    public Character(double xpos, double ypos) {
+    public Student(double xpos, double ypos) {
         Image image = new Image(getClass().getClassLoader().getResourceAsStream(character));
         setX(xpos);
         setY(ypos);
