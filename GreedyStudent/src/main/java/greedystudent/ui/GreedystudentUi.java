@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import greedystudent.domain.Level;
 import greedystudent.domain.Character;
 import greedystudent.domain.GameLogic;
+import java.util.HashSet;
 import javafx.animation.AnimationTimer;
 
         
@@ -28,27 +29,14 @@ public class GreedystudentUi extends Application {
     private double height =720;
     private double width = 1280;
     private Group sceneGroup;
+    private HashSet<KeyCode> pressed;
     public static void main(String[] args) {
         launch(args);
     }
     
     @Override
     public void start(Stage mainstage) throws Exception {
-        GridPane er = new GridPane();
-        Button start = new Button("start");
-        start.setOnAction(e ->{
-            gameLoop(mainstage);
-        });
-        er.add(start, 0, 0);
-        /*sceneGroup = new Group();
-        Scene game = new Scene(sceneGroup,width, height);
-        Level cLevel = new Level(height);
-        Character student = new Character(0, 0);
-        sceneGroup.setLayoutX(0);
-        sceneGroup.getChildren().add(cLevel);
-        sceneGroup.getChildren().add(student);*/
-        Scene alku = new Scene(er, width, height);
-        mainstage.setScene(alku);
+        mainMenu(mainstage);
         mainstage.show();
     }
     
@@ -61,7 +49,9 @@ public class GreedystudentUi extends Application {
         sceneGroup.setLayoutX(0);
         sceneGroup.getChildren().add(cLevel);
         sceneGroup.getChildren().add(student);
+        pressed = new HashSet();
         s.setScene(game);
+        
         new AnimationTimer(){
             long lastpoint=0;
             
@@ -71,17 +61,52 @@ public class GreedystudentUi extends Application {
                 if(current-lastpoint < 1000){
                     return;
                 }
-                game.setOnKeyPressed(e ->{
-                    if(e.getCode() == KeyCode.D){
+                if(!student.isAlive){
+                    stop();
+                    endGameScreen(s);
+                }
+                if(gamelog.allcoins == true){
+                    stop();
+                    endGameScreen(s);
+                }
+                game.setOnKeyPressed(e -> pressed.add(e.getCode()));
+ 
+                if(pressed.contains(KeyCode.W)){
+                        student.jump();
+                }
+                if(pressed.contains(KeyCode.D)){
                         student.moveRight();
-                    }
-                    if(e.getCode() == KeyCode.A){
+                }
+                if(pressed.contains(KeyCode.A)){
                         student.moveLeft();
-                    }
-                });
+                }
+                game.setOnKeyReleased(e -> pressed.remove(e.getCode()));
                 gamelog.update();
+                student.stopMovementX();
                 lastpoint = current;
             }
         }.start();
+    }
+    
+    public void endGameScreen(Stage s){
+        GridPane endPane = new GridPane();
+        Button main = new Button("mainmenu");
+        main.setOnAction(e ->{
+            mainMenu(s);
+        });
+        endPane.add(main, 3, 3);
+        Scene end = new Scene(endPane, width, height);
+        s.setScene(end);
+    }
+    
+    public void mainMenu(Stage s){
+        GridPane er = new GridPane();
+        Button start = new Button("start");
+        start.setOnAction(e ->{
+            gameLoop(s);
+        });
+        er.add(start, 0, 0);
+        Scene alku = new Scene(er, width, height);
+        s.setScene(alku);
     }
 }

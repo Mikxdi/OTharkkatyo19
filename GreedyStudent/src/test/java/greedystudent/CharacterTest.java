@@ -26,15 +26,15 @@ public class CharacterTest {
         Character c = new Character(2, 1);
     }
     
-    @Test
+    /*@Test
     public void moveRight(){
-        c.moveRight();
-        assertTrue(c.movingRight);
+        moveRight();
+        assertEquals(true, c.isMovingRight());
     }
     @Test
     public void moveLeft(){
-        c.moveLeft();
-        assertTrue(c.movingLeft);
-    }
+        moveLeft();
+        assertEquals(true, c.isMovingLeft());
+    }*/
 
 }

@@ -13,14 +13,17 @@ import javafx.scene.image.Image;
  * @author lehtmikk
  */
 public class Character extends ImageView {
-    private double size = 100;
-    private String character = "images/student.png";
-    private double xSpeed = 300;
-    private double jumpHeight = 700;
-    private boolean canJump;
-    private double yAccelerate;
+    public double size = 100;
+    public String character = "images/student.png";
+    public double xSpeed = 300;
+    public double jumpHeight = 30;
+    public boolean canJump =  false;
+    public double yAccelerate = 1.0001;
     public boolean movingRight;
     public boolean movingLeft;
+    public double yVelocity;
+    public boolean onPlatform = false;
+    public boolean isAlive = true;
     
     
     public Character(double xpos, double ypos) {
@@ -30,7 +33,6 @@ public class Character extends ImageView {
         setFitHeight(size);
         setFitWidth(size);
         setImage(image);
-        canJump = true;
     }
     public void moveLeft() {
         movingRight = false;
@@ -40,6 +42,24 @@ public class Character extends ImageView {
         movingRight = true;
         movingLeft = false;
     }
-   
+    public void stopMovementX(){
+        movingRight = false;
+        movingLeft = false;
+    }
+
+    public boolean isMovingRight() {
+        return movingRight;
+    }
+
+    public boolean isMovingLeft() {
+        return movingLeft;
+    }
+    public void jump(){
+        if(canJump){
+            yVelocity -= jumpHeight;
+            yAccelerate = 1.0001;
+        }
+        canJump = false;
+    }
     
 }
