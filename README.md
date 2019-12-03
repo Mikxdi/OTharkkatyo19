@@ -4,6 +4,10 @@
 
 Helsingin yliopiston ohjelmistotekniikka kurssia varten luodun sovelluksen repositio
 
+### Ensimmäinen release
+
+[Viikko 5](https://github.com/Mikxdi/OTharkkatyo19/releases)
+
 ### Testaus
 
 Testaus suoritetaan komennolla 

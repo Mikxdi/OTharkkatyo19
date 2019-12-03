@@ -4,4 +4,4 @@
 
 ## Sekvenssikaavio
 
-<img src="https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Pictures/Sekvenssikaavio.png" width="600 height="600" />
+<img src="https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Pictures/Sekvenssikaavio.png" width="600 heigth="600" />
