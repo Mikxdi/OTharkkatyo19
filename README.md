@@ -38,8 +38,19 @@ Ohjelman suorittaminen tapahtuu syöttämällä terminaaliin komennon
 mvn compile exec:java -Dexec.mainClass=greedystudent.ui.GreedystudentUi 
 ```
 
+### Pakkauksen luominen
+
+Ohjelmasta saa suoritetavan jar tiedoston komennolla 
+
+```
+mvn package
+```
+
 ####  Linkki tuntikirjanpitoon
 [Tuntikirjanpito](https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Tuntikirjanpito.md)
 
 #### Linkki Arkkitehtuuri kuvaukseen
 [Arkkitehtuuri](https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Arkkitehtuuri.md)
+
+#### Linkki vaatimusmäärittelyyn
+[Vaatimusmäärittely](https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Vaatimusmaarittely.md)
