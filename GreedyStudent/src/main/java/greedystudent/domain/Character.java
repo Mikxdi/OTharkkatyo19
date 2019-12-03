@@ -42,7 +42,7 @@ public class Character extends ImageView {
         movingRight = true;
         movingLeft = false;
     }
-    public void stopMovementX(){
+    public void stopMovementX() {
         movingRight = false;
         movingLeft = false;
     }
@@ -54,8 +54,8 @@ public class Character extends ImageView {
     public boolean isMovingLeft() {
         return movingLeft;
     }
-    public void jump(){
-        if(canJump){
+    public void jump() {
+        if (canJump) {
             yVelocity -= jumpHeight;
             yAccelerate = 1.0001;
         }
