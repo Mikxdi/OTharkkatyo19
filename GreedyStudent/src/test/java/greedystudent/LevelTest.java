@@ -21,7 +21,7 @@ public class LevelTest {
     
     @Before
     public void setUp() {
-        this.l = new Level(720);
+        this.l = new Level(720, 1);
     }
     
     @Test

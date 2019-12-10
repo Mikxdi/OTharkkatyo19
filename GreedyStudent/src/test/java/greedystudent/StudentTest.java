@@ -5,13 +5,14 @@
  */
 package greedystudent;
 
-import org.junit.After;
-import org.junit.AfterClass;
+
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import greedystudent.domain.Student;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat; 
+import static org.hamcrest.Matcher.*;
 
 /**
  *
@@ -19,22 +20,22 @@ import greedystudent.domain.Student;
  */
 public class StudentTest {
     
-    Student c;
+    Student student;
     
     @Before
     public void setUp() {
-        Student c = new Student(0, 0);
+        this.student = new Student(100, 100);
     }
-    /*
+    
     @Test
     public void moveRightTest(){
-        c.moveRight();
-        assertTrue(c.movingRight);
+        student.moveRight();
+        assertTrue(student.movingRight);
     }
     @Test
     public void moveLeftTest(){
-        c.moveLeft();
-        assertTrue(c.movingLeft);
-    }*/
+        student.moveLeft();
+        assertTrue(student.movingLeft);
+    }
 
 }

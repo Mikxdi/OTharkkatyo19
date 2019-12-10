@@ -8,12 +8,14 @@ package greedystudent;
 import greedystudent.domain.GameLogic;
 import greedystudent.domain.Level;
 import greedystudent.domain.Student;
+import static org.hamcrest.CoreMatchers.is;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat; 
 
 /**
  *
@@ -26,17 +28,42 @@ public class GameLogicTest {
     Level l;
     @Before
     public void setUp() {
-        Student c = new Student(10, 10);
-        Level l = new Level(600);
-        GameLogic g = new GameLogic(c, l);
+        this.c = new Student(10, 10);
+        this.l = new Level(600, 1);
+        this.g = new GameLogic(c, l);
     }
     
-    /*@Test
+    @Test
     public void aliveStatusT (){
-        c.setY(20);
         g.aliveStatus();
-        assertTrue(c.isAlive);
-    }*/
+        assertThat(c.isAlive, is(true));
+    }
+    
+    @Test
+    public void updateXmovementRight(){
+        c.moveRight();
+        double lastX = c.getX();
+        g.charMovementX();
+        assertThat(c.getX(), is(lastX + 5));
+    }
+    @Test
+    public void updateXmovementLeft(){
+        c.moveLeft();
+        double lastX = c.getX();
+        g.charMovementX();
+        assertThat(c.getX(), is(lastX - 5));
+    }
+    @Test
+    public void coinListEmpty(){
+        l.getCoinList().removeAll(l.getCoinList());
+        g.checkCoins();
+        assertTrue(g.allcoins);
+    }
+    @Test
+    public void coinListHasCoins(){
+        g.checkCoins();
+        assertFalse(g.allcoins);
+    }
     
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
