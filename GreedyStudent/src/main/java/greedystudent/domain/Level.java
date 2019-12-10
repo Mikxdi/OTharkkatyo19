@@ -24,11 +24,12 @@ public class Level extends Group {
     private double levelHeight, levelWidth;
     private double widthR = 0.7;
     private List<Platform> platList;
-    private String lvl = "levels/level1.txt";
+    private String lvlpre = "levels/level";
+    private String lvlpost = ".txt";
     private List<Coin> coinList;
     
-    public Level(double height) {
-        String file = lvl;
+    public Level(double height, int current) {
+        String file = lvlpre + current + lvlpost;
         InputStream fileread = getClass().getClassLoader().getResourceAsStream(file);
         Scanner lvlinput = new Scanner(fileread);
         platList = new ArrayList<Platform>();
