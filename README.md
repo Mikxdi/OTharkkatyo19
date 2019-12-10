@@ -58,3 +58,6 @@ mvn package
 
 #### Linkki vaatimusmäärittelyyn
 [Vaatimusmäärittely](https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Vaatimusmaarittely.md)
+
+#### Linkki käyttöohjeisiin
+[Käyttöohje](https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Kayttoohje.md)
