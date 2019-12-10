@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author lehtmikk
+ * Creates level for game
  */
 public class Level extends Group {
     private int freeId = 0;
@@ -28,6 +28,12 @@ public class Level extends Group {
     private String lvlpost = ".txt";
     private List<Coin> coinList;
     
+    /**
+     * 
+     * Creates level with coins and platforms
+     * @param height game windows height to scale objects
+     * @param current gets level number from ui
+     */
     public Level(double height, int current) {
         String file = lvlpre + current + lvlpost;
         InputStream fileread = getClass().getClassLoader().getResourceAsStream(file);

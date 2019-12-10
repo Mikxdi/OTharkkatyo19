@@ -10,24 +10,34 @@ import javafx.geometry.Bounds;
 
 /**
  *
- * @author lehtmikk
+ * Class where most of the game logic and updates happen
  */
 public class GameLogic {
     public Level l;
     public Student c;
     public boolean allcoins = false;
+    /**
+     * Creates game logic, which updates character posiotions and if they are alive
+     * @param c playable character
+     * @param l current level 
+     */
     public GameLogic(Student c, Level l) {
         this.l = l;
         this.c = c;
     }
-    
+    /**
+     * games main update loop. gets other update methods
+     */
     public void update() {
         charMovementX();
         charMovementY();
         checkCoins();
         aliveStatus();
     }
-    
+    /**
+     * Checks if character is moving and stops character from moving out of the level
+     * Also stops character from going through platforms
+     */
     public void charMovementX() {
         if (c.movingLeft == true) {
             c.setX(c.getX() - 5);
@@ -53,7 +63,10 @@ public class GameLogic {
             c.setX(1190);
         }
     }    
-    
+    /**
+     * Checks if character has jumped. If so sets new y position
+     * If character is on platform resets jump and stops falling
+     */
     public void charMovementY() {
         c.yVelocity += c.yAccelerate;
         c.setY(c.getY() + c.yVelocity);
@@ -72,7 +85,11 @@ public class GameLogic {
             c.yAccelerate = 1.0001;
         }
     }    
-    
+    /**
+     * Updates ammount of coins in level. Checks if character is touching a coin
+     * if touching, removes coin from map
+     * if coinList is empty, sets allcoins true and stops gameloop
+     */
     public void checkCoins() {
         ArrayList<Coin> removableCoins = new ArrayList<>();
         for (Coin coins : l.getCoinList()) {
@@ -88,6 +105,9 @@ public class GameLogic {
         }
         
     }
+    /**
+     * Checks if playable character is alive or not
+     */
     public void aliveStatus() {
         if (c.getY() > 2000) {
             c.isAlive = false;

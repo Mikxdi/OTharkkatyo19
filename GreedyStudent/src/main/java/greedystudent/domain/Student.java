@@ -10,7 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 /**
  *
- * @author lehtmikk
+ *Class for creating playable character for game
  */
 public class Student extends ImageView {
     public double size = 100;
@@ -25,7 +25,11 @@ public class Student extends ImageView {
     public boolean onPlatform = false;
     public boolean isAlive = true;
     
-    
+    /**
+     * Creates character to given position
+     * @param xpos
+     * @param ypos 
+     */
     public Student(double xpos, double ypos) {
         Image image = new Image(getClass().getClassLoader().getResourceAsStream(character));
         setX(xpos);
@@ -34,14 +38,23 @@ public class Student extends ImageView {
         setFitWidth(size);
         setImage(image);
     }
+    /**
+     * Move command to left
+     */
     public void moveLeft() {
         movingRight = false;
         movingLeft = true;
     }
+    /**
+     * Move command to right
+     */
     public void moveRight() {
         movingRight = true;
         movingLeft = false;
     }
+    /**
+     * Stops movevent if no button presses happen
+     */
     public void stopMovementX() {
         movingRight = false;
         movingLeft = false;
@@ -54,6 +67,10 @@ public class Student extends ImageView {
     public boolean isMovingLeft() {
         return movingLeft;
     }
+    /**
+     * Checks if character can jump and sets jump velocity and acceleration
+     * if false nothing happens
+     */
     public void jump() {
         if (canJump) {
             yVelocity -= jumpHeight;
