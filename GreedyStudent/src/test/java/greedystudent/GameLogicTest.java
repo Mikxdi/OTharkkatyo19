@@ -7,6 +7,7 @@ package greedystudent;
 
 import greedystudent.domain.GameLogic;
 import greedystudent.domain.Level;
+import greedystudent.domain.Platform;
 import greedystudent.domain.Student;
 import static org.hamcrest.CoreMatchers.is;
 import org.junit.After;
@@ -32,11 +33,18 @@ public class GameLogicTest {
         this.l = new Level(600, 1);
         this.g = new GameLogic(c, l);
     }
-    
+
     @Test
     public void aliveStatusT (){
         g.aliveStatus();
         assertThat(c.isAlive, is(true));
+    }
+    
+    @Test
+    public void aliveStatusDead (){
+        c.setY(2001);
+        g.aliveStatus();
+        assertThat(c.isAlive, is(false));
     }
     
     @Test
@@ -45,6 +53,13 @@ public class GameLogicTest {
         double lastX = c.getX();
         g.charMovementX();
         assertThat(c.getX(), is(lastX + 5));
+    }
+    @Test
+    public void OnPlatform(){
+        Platform plat = new Platform(0, 0, 20, 20);
+        l.getPlatformList().add(plat);
+        g.charMovementY();
+        assertThat(c.onPlatform, is(true));
     }
     @Test
     public void updateXmovementLeft(){
@@ -63,6 +78,12 @@ public class GameLogicTest {
     public void coinListHasCoins(){
         g.checkCoins();
         assertFalse(g.allcoins);
+    }
+    
+    @Test
+    public void updateYmovementRight(){
+        g.charMovementY();
+        assertThat(c.yAccelerate, is(1.0001));
     }
     
     // TODO add test methods here.

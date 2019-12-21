@@ -12,8 +12,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
-import java.util.List;
-import java.util.ArrayList;
 import greedystudent.domain.Level;
 import greedystudent.domain.Student;
 import greedystudent.domain.GameLogic;
@@ -23,7 +21,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import greedystudent.dao.PlayerDao;
 import greedystudent.domain.Player;
 import javafx.scene.control.TextField;
@@ -86,7 +83,7 @@ public class GreedystudentUi extends Application {
                 if(gamelog.allcoins == true){
                     stop();
                     player.setLevelsPassed(currentlevel);
-                    playerDao.UpdatePlayer(player);
+                    playerDao.updatePlayer(player);
                     endGameScreen(s);
                 }
                 game.setOnKeyPressed(e -> pressed.add(e.getCode()));
@@ -187,7 +184,6 @@ public class GreedystudentUi extends Application {
         Button level2 = new Button("2");
         Button level3 = new Button("3");
         Button back = new Button("Return");
-        System.out.println(player.getLevelsPassed());
         HBox buttons = new HBox();
         level1.setOnAction(e ->{
             currentlevel=1;
@@ -195,7 +191,6 @@ public class GreedystudentUi extends Application {
         });
         if(this.player.getLevelsPassed()>0){
             level2.setOnAction(e ->{
-                System.out.println(player.getLevelsPassed());
                 currentlevel=2;
                 gameLoop(s);
             });

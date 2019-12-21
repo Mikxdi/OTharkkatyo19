@@ -12,7 +12,7 @@ package greedystudent.domain;
 public class Player {
     private String name;
     private int levelsPassed;
-    public Player(String name, int levelsPassed){
+    public Player(String name, int levelsPassed) {
         this.name = name;
         this.levelsPassed = levelsPassed;
     }
