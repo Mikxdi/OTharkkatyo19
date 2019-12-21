@@ -66,7 +66,7 @@ public class PlayerDao {
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
                 }
-                Player player = new Player(name, 1);
+                Player player = new Player(name, 0);
                 return player;
 
             }else{

@@ -187,19 +187,20 @@ public class GreedystudentUi extends Application {
         Button level2 = new Button("2");
         Button level3 = new Button("3");
         Button back = new Button("Return");
+        System.out.println(player.getLevelsPassed());
         HBox buttons = new HBox();
         level1.setOnAction(e ->{
             currentlevel=1;
             gameLoop(s);
         });
-        if(player.getLevelsPassed()>0){
+        if(this.player.getLevelsPassed()>0){
             level2.setOnAction(e ->{
                 System.out.println(player.getLevelsPassed());
                 currentlevel=2;
                 gameLoop(s);
             });
         }
-        if(player.getLevelsPassed()>1){
+        if(this.player.getLevelsPassed()>1){
             level3.setOnAction(e ->{
                 currentlevel=3;
                 gameLoop(s);
