@@ -7,4 +7,7 @@
 |3.12|4|Pelilogiikka loppuun|
 |9.12|2|Ui käytännöllisemmäksi ja testejä|
 |10.12|3|javadoc ja hiontaa|
-|Yhteensä|22|Käytetty Aika kokonaisuudessaan|
+|17.12|3|Sovelluksen siistimistä ja SQL muistelua|
+|21.12|4|Tietokannan liittäminen sovellukseen|
+|22.12|3|Testejä ja dokumentaatiota|
+|Yhteensä|32|Käytetty Aika kokonaisuudessaan|
