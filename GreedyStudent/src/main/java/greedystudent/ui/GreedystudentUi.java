@@ -24,6 +24,9 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import greedystudent.dao.PlayerDao;
+import greedystudent.domain.Player;
+import javafx.scene.control.TextField;
 
         
 /**
@@ -36,6 +39,13 @@ public class GreedystudentUi extends Application {
     private Group sceneGroup;
     private HashSet<KeyCode> pressed;
     private int currentlevel;
+    private Player player;
+    private PlayerDao playerDao;
+    
+    @Override
+    public void init() throws Exception {
+        this.playerDao = new PlayerDao();
+    }
     
     public static void main(String[] args) {
         launch(args);
@@ -43,7 +53,7 @@ public class GreedystudentUi extends Application {
     
     @Override
     public void start(Stage mainstage) throws Exception {
-        mainMenu(mainstage);
+        loginScreen(mainstage);
         mainstage.setTitle("GreedyStudent");
         mainstage.show();
     }
@@ -66,7 +76,7 @@ public class GreedystudentUi extends Application {
             
             @Override
             public void handle(long current){
-                if(current-lastpoint < 1000){
+                if(current-lastpoint < 100000){
                     return;
                 }
                 if(!student.isAlive){
@@ -75,6 +85,8 @@ public class GreedystudentUi extends Application {
                 }
                 if(gamelog.allcoins == true){
                     stop();
+                    player.setLevelsPassed(currentlevel);
+                    playerDao.UpdatePlayer(player);
                     endGameScreen(s);
                 }
                 game.setOnKeyPressed(e -> pressed.add(e.getCode()));
@@ -107,13 +119,15 @@ public class GreedystudentUi extends Application {
         levelsm.setOnAction(e ->{
             levelMenu(s);
         });
+        main.setMinWidth(100);
+        levelsm.setMinWidth(100);
         Label gz = new Label("You Won!");
-        endPane.add(main, 0, 1);
+        endPane.add(main, 0, 2);
         endPane.add(gz, 0, 0);
-        endPane.add(levelsm, 0, 2);
+        endPane.add(levelsm, 0, 1);
         endPane.setAlignment(Pos.CENTER);
-        endPane.setHgap(20);
-        endPane.setVgap(20);
+        endPane.setHgap(40);
+        endPane.setVgap(40);
         endPane.setPadding(new Insets(30, 30, 30, 30));
         endBorder.setCenter(endPane);
         Scene end = new Scene(endBorder, width/2, height/2);
@@ -123,18 +137,20 @@ public class GreedystudentUi extends Application {
     public void endGameLossScreen(Stage s){
         BorderPane endBorder = new BorderPane();
         GridPane endPane = new GridPane();
-        Button main = new Button("Back to mainmenu");
+        Button main = new Button("Mainmenu");
         main.setOnAction(e ->{
             mainMenu(s);
         });
-        Button retry = new Button("retry");
+        Button retry = new Button("Retry");
         retry.setOnAction(e ->{
             gameLoop(s);
         });
+        main.setMinWidth(100);
+        retry.setMinWidth(100);
         Label gz = new Label("You Lost!");
-        endPane.add(main, 0, 1);
+        endPane.add(main, 0, 2);
         endPane.add(gz, 0, 0);
-        endPane.add(retry, 0, 2);
+        endPane.add(retry, 0, 1);
         endPane.setAlignment(Pos.CENTER);
         endPane.setHgap(40);
         endPane.setVgap(40);
@@ -146,11 +162,20 @@ public class GreedystudentUi extends Application {
     
     public void mainMenu(Stage s){
         GridPane startPane = new GridPane();
-        Button start = new Button("start");
+        Button start = new Button("Start");
         start.setOnAction(e ->{
             levelMenu(s);
         });
+        Button quitB = new Button("Quit");
+        quitB.setOnAction(e ->{
+            s.close();
+        });
+        quitB.setMinWidth(100);
+        start.setMinWidth(100);
         startPane.add(start, 0, 0);
+        startPane.add(quitB, 0, 1);
+        startPane.setHgap(20);
+        startPane.setVgap(20);
         startPane.setAlignment(Pos.CENTER);
         Scene alku = new Scene(startPane, width/2, height/2);
         s.setScene(alku);
@@ -161,32 +186,59 @@ public class GreedystudentUi extends Application {
         Button level1 = new Button("1");
         Button level2 = new Button("2");
         Button level3 = new Button("3");
-        Button back = new Button("return");
+        Button back = new Button("Return");
         HBox buttons = new HBox();
         level1.setOnAction(e ->{
             currentlevel=1;
             gameLoop(s);
         });
-        level2.setOnAction(e ->{
-            currentlevel=2;
-            gameLoop(s);
-        });
-        level3.setOnAction(e ->{
-            currentlevel=3;
-            gameLoop(s);
-        });
+        if(player.getLevelsPassed()>0){
+            level2.setOnAction(e ->{
+                System.out.println(player.getLevelsPassed());
+                currentlevel=2;
+                gameLoop(s);
+            });
+        }
+        if(player.getLevelsPassed()>1){
+            level3.setOnAction(e ->{
+                currentlevel=3;
+                gameLoop(s);
+            });
+        }
         back.setOnAction(e ->{
             mainMenu(s);
         });
+        level1.setMinWidth(100);
+        level2.setMinWidth(100);
+        level3.setMinWidth(100);
         buttons.getChildren().add(level1);
         buttons.getChildren().add(level2);
         buttons.getChildren().add(level3);
         buttons.setSpacing(50);
         levels.setCenter(buttons);
+        back.setAlignment(Pos.BOTTOM_CENTER);
         levels.setBottom(back);
         buttons.setAlignment(Pos.CENTER);
         buttons.setPadding(new Insets(30, 30, 30, 30));
         Scene levelmenu = new Scene(levels, width/2, height/2);
         s.setScene(levelmenu);
+    }
+    
+    public void loginScreen(Stage s){
+        BorderPane loginB = new BorderPane();
+        GridPane login = new GridPane();
+        login.setAlignment(Pos.CENTER);
+        TextField username = new TextField();
+        Button loginbutton = new Button("Login");
+        loginbutton.setOnAction(e ->{
+            String name = username.getText();
+            this.player = playerDao.addOrGetPlayer(name);
+            mainMenu(s);
+        });
+        login.add(username, 2, 2);
+        login.add(loginbutton, 2, 3);
+        loginB.setCenter(login);
+        Scene loginMenu = new Scene(loginB, width/2, height/2);
+        s.setScene(loginMenu);
     }
 }

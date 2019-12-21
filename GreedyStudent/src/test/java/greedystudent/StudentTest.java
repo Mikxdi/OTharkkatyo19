@@ -37,5 +37,15 @@ public class StudentTest {
         student.moveLeft();
         assertTrue(student.movingLeft);
     }
-
+    @Test
+    public void jumpTest(){
+        student.jump();
+        assertFalse(student.canJump);
+    }
+    @Test
+    public void jumpHeightTest(){
+        student.canJump = true;
+        student.jump();
+        assertThat(student.yVelocity, is(-30.0));
+    }
 }

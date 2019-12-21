@@ -18,7 +18,7 @@ public class Student extends ImageView {
     public double xSpeed = 300;
     public double jumpHeight = 30;
     public boolean canJump =  false;
-    public double yAccelerate = 1.0001;
+    public double yAccelerate = 1.000001;
     public boolean movingRight = false;
     public boolean movingLeft = false;
     public double yVelocity;
@@ -74,7 +74,7 @@ public class Student extends ImageView {
     public void jump() {
         if (canJump) {
             yVelocity -= jumpHeight;
-            yAccelerate = 1.0001;
+            yAccelerate = 1.000001;
         }
         canJump = false;
     }
