@@ -11,8 +11,9 @@ ja domain sisältää varsinaisen sovelluslogiikan pelin taustalla
 
 ## Käyttäliittymä
 
-Pelin käyttöliittymä koostuu neljästä eri näkymästä.
+Pelin käyttöliittymä koostuu viidestä eri näkymästä.
 
+* Kirjautumisvalikko
 * Päävalikko
 * Kenttävälikko
 * Pelinäkymä
@@ -22,6 +23,12 @@ Kukin näistä on toteutettu Ui:n puolella omana scene olionaa ja niiden muodost
 
 Käyttöliittymä ei vastaa animaatiota ja päivityslooppia lukuunottamatta pelilogiikasta vaan kutsuu domainista update metodia, joka päivittää pelin tapahtumat
 
+## Tietokanta
+
+Peli tallentaa tietokantaan käyttäjänimen, joka pitää ylhäällä tietoa korkeimmain läpäistyn kentän numerosta. Mikäli käyttäjä ei ole läpäissyt edellisiä kenttiä, eivät korkeamman tason kentät ole avoinna.
+Kuvassa tietokantaa kaavio:
+
+<img src="https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Pictures/Tietokantakuvaus.png" width="300" heigth="300" />
 
 ## Sovelluslogiikka 
 
@@ -29,7 +36,7 @@ Sovelluksen päätoiminnallisuudesta vastaa gameLogic luokka, joka kutsuu update
 
 ## Sekvenssikaavio
 
-Yksinkertainen kuvaus pelin toiminnasta 
+Yksinkertainen kuvaus pelin toiminnasta sen käynnistyessä ja liikkuessa. 
 
 <img src="https://github.com/Mikxdi/OTharkkatyo19/blob/master/documentation/Pictures/Sekvenssikaavio.png" width="600" heigth="600" />
 
